@@ -14,13 +14,13 @@ To run the tests, follow these steps. You must have at least node v10 and [yarn]
 First clone the repository:
 
 ```sh
-git clone https://github.com/arkswap/arkswap-sdk.git
+git clone https://github.com/qq1242716827/my-bsc-sdk.git
 ```
 
-Move into the arkswap-sdk working directory
+Move into the my-bsc-sdk working directory
 
 ```sh
-cd arkswap-sdk/
+cd my-bsc-sdk/
 ```
 
 Install dependencies
