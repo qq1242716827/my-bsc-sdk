@@ -21,9 +21,8 @@ var ChainId;
   ChainId[ChainId["RINKEBY"] = 4] = "RINKEBY";
   ChainId[ChainId["G\xD6RLI"] = 5] = "G\xD6RLI";
   ChainId[ChainId["KOVAN"] = 42] = "KOVAN";
-  ChainId[ChainId["HMAINNET"] = 128] = "HMAINNET";
-  ChainId[ChainId["HTESTNET"] = 256] = "HTESTNET";
   ChainId[ChainId["BSCNET"] = 97] = "BSCNET";
+  ChainId[ChainId["BSCMAINNET"] = 56] = "BSC";
 })(ChainId || (ChainId = {}));
 
 var TradeType;
@@ -441,7 +440,7 @@ function currencyEquals(currencyA, currencyB) {
     return currencyA === currencyB;
   }
 }
-var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.ROPSTEN] = /*#__PURE__*/new Token(ChainId.ROPSTEN, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.RINKEBY] = /*#__PURE__*/new Token(ChainId.RINKEBY, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.GÖRLI] = /*#__PURE__*/new Token(ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.KOVAN] = /*#__PURE__*/new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.HMAINNET] = /*#__PURE__*/new Token(ChainId.HMAINNET, '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f', 18, 'WHT', 'Wrapped HT'), _WETH[ChainId.HTESTNET] = /*#__PURE__*/new Token(ChainId.HTESTNET, '0x5545153ccfca01fbd7dd11c0b23ba694d9509a6f', 18, 'WHT', 'Wrapped HT'), _WETH[ChainId.BSCNET] = /*#__PURE__*/new Token(ChainId.BSCNET, '0x8b1c0aa02b04104b105ada7381c70ca40e141714', 18, 'WETH', 'Wrapped ETH'), _WETH);
+var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.ROPSTEN] = /*#__PURE__*/new Token(ChainId.ROPSTEN, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.RINKEBY] = /*#__PURE__*/new Token(ChainId.RINKEBY, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.GÖRLI] = /*#__PURE__*/new Token(ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.KOVAN] = /*#__PURE__*/new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH[ChainId.BSCNET] = /*#__PURE__*/new Token(ChainId.BSCNET, '0x8b1c0aa02b04104b105ada7381c70ca40e141714', 18, 'WBSC', 'Wrapped BSC'), _WETH[ChainId.BSCMAINNET] = /*#__PURE__*/new Token(ChainId.BSCMAINNET, '0x8b1c0aa02b04104b105ada7381c70ca40e141714', 18, 'WBSC', 'Wrapped BSC'), _WETH);
 
 var _toSignificantRoundin, _toFixedRounding;
 var Decimal = /*#__PURE__*/toFormat(_Decimal);
