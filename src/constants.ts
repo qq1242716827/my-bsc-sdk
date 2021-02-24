@@ -9,9 +9,9 @@ export enum ChainId {
   RINKEBY = 4,
   GÖRLI = 5,
   KOVAN = 42,
+  BSCNET = 97,
   HMAINNET = 128,
   HTESTNET = 256,
-  BSCNET = 97
 }
 
 export enum TradeType {

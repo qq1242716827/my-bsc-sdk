@@ -27,6 +27,7 @@ var _SOLIDITY_TYPE_MAXIMA;
   ChainId[ChainId["KOVAN"] = 42] = "KOVAN";
   ChainId[ChainId["HMAINNET"] = 128] = "HMAINNET";
   ChainId[ChainId["HTESTNET"] = 256] = "HTESTNET";
+  ChainId[ChainId["BSCNET"] = 97] = "BSCNET";
 })(exports.ChainId || (exports.ChainId = {}));
 
 (function (TradeType) {
