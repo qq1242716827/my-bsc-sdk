@@ -25,7 +25,7 @@ var _SOLIDITY_TYPE_MAXIMA;
   ChainId[ChainId["RINKEBY"] = 4] = "RINKEBY";
   ChainId[ChainId["G\xD6RLI"] = 5] = "G\xD6RLI";
   ChainId[ChainId["KOVAN"] = 42] = "KOVAN";
-  ChainId[ChainId["BSCNET"] = 97] = "BSCTESTNET";
+  ChainId[ChainId["BSCNET"] = 97] = "BSCNET";
   ChainId[ChainId["BSCMAINNET"] = 56] = "BSCMAINNET";
 })(exports.ChainId || (exports.ChainId = {}));
 
@@ -374,7 +374,7 @@ function Currency(decimals, symbol, name) {
  * The only instance of the base class `Currency`.
  */
 
-Currency.ETHER = /*#__PURE__*/new Currency(18, 'HT', 'Ether');
+Currency.ETHER = /*#__PURE__*/new Currency(18, 'WBSC', 'Ether');
 var ETHER = Currency.ETHER;
 
 var _WETH;
