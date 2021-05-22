@@ -8,14 +8,14 @@ import { getCreate2Address } from '@ethersproject/address'
 import {
   BigintIsh,
   FACTORY_ADDRESS,
-  INIT_CODE_HASH,
+  // INIT_CODE_HASH,
   MINIMUM_LIQUIDITY,
   ZERO,
   ONE,
   FIVE,
   _997,
   _1000,
-  ChainId
+  ChainId, INIT_CODE_HASH_ARRAY
 } from '../constants'
 import { sqrt, parseBigintIsh } from '../utils'
 import { InsufficientReservesError, InsufficientInputAmountError } from '../errors'
@@ -27,6 +27,25 @@ export class Pair {
   public readonly liquidityToken: Token
   private readonly tokenAmounts: [TokenAmount, TokenAmount]
 
+  public static getAddress2(tokenA: Token, tokenB: Token, initChainId:number): string {
+    const tokens = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA] // does safety checks
+
+    if (PAIR_ADDRESS_CACHE?.[tokens[0].address]?.[tokens[1].address] === undefined) {
+      PAIR_ADDRESS_CACHE = {
+        ...PAIR_ADDRESS_CACHE,
+        [tokens[0].address]: {
+          ...PAIR_ADDRESS_CACHE?.[tokens[0].address],
+          [tokens[1].address]: getCreate2Address(
+            FACTORY_ADDRESS,
+            keccak256(['bytes'], [pack(['address', 'address'], [tokens[0].address, tokens[1].address])]),
+              INIT_CODE_HASH_ARRAY[initChainId]
+          )
+        }
+      }
+    }
+
+    return PAIR_ADDRESS_CACHE[tokens[0].address][tokens[1].address]
+  }
   public static getAddress(tokenA: Token, tokenB: Token): string {
     const tokens = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA] // does safety checks
 
@@ -38,7 +57,7 @@ export class Pair {
           [tokens[1].address]: getCreate2Address(
             FACTORY_ADDRESS,
             keccak256(['bytes'], [pack(['address', 'address'], [tokens[0].address, tokens[1].address])]),
-            INIT_CODE_HASH
+            INIT_CODE_HASH_ARRAY[tokenA.chainId]
           )
         }
       }

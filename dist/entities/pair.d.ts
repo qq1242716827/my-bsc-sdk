@@ -5,6 +5,7 @@ import { Token } from './token';
 export declare class Pair {
     readonly liquidityToken: Token;
     private readonly tokenAmounts;
+    static getAddress2(tokenA: Token, tokenB: Token, initChainId: number): string;
     static getAddress(tokenA: Token, tokenB: Token): string;
     constructor(tokenAmountA: TokenAmount, tokenAmountB: TokenAmount);
     /**
